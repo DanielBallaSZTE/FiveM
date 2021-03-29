@@ -6,3 +6,4 @@ description 'no'
 version '1.0.0'
 
 server_script 'server.js'
+server_export 'SQLQuery'

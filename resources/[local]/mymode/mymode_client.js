@@ -1,25 +1,3 @@
-const spawnPos = [686.245, 577.950, 130.461];
-
-on('onClientGameTypeStart', () => {
-    exports.spawnmanager.setAutoSpawnCallback(() => {
-        exports.spawnmanager.spawnPlayer({
-            x: spawnPos[0],
-            y: spawnPos[1],
-            z: spawnPos[2],
-            model: 's_m_y_baywatch_01'
-        }, () => {
-            emit('chat:addMessage', {
-                args: [
-                    'Welcome to the party!~'
-                ]
-            })
-        });
-    });
-
-    exports.spawnmanager.setAutoRespawn(true)
-    exports.spawnmanager.forceRespawn()
-});
-
 on('gameEventTriggered', (name, args) => {
     emit('chat::addMessage', {
         args: [`Game event ${name} ${args.join(', ')}`]

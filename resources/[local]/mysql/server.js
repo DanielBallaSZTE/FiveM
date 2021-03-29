@@ -16,14 +16,15 @@ connection.connect((err) => {
     console.log('[MySQL]: Connected');
 });
 
-exports('SQLQuery', (query) => {
+const SQLQuery = (query, callback) => {
     connection.query(query, (err, rows) => {
         if (err) {
             console.log(`[MySQL]: Query failed, ${err.message}`);
-            return;
+            callback(err);
         }
 
-        console.log('[MySQL]: Query successful');
-        console.log(rows);
+        callback(rows);
     });
-});
+};
+
+exports('SQLQuery', SQLQuery);
