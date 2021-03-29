@@ -1,0 +1,25 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" media="screen" href="main.css">
+</head>
+<body class="bg">
+    <div class="container">
+        <img src="load.jpg">
+    </div>
+    <div id="audio">
+        <audio id="intro" controls loop autoplay hidden>
+            <source src="intro.mp3" type="audio/mp3">
+        </audio>
+    </div>
+
+    <div class="loadbar">
+        <div class="progress-bar"></div>
+    </div>
+    <script src="main.js"></script>
+    <script>
+        var intro = document.getElementById('intro');
+        intro.volume = 0.05;
+    </script>
+</body>
+</html>
